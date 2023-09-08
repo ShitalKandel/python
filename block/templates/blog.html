@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+<body>
+    <div class="container">
+        <h1>Author</h1>
+        <table id="authorId" border="1">
+            <thead>
+                <th>Name </th>
+                <th>Title </th>
+                <th>Description</th>
+                <th colspan=" " id="mid">Action</th>
+            </thead>
+            
+            
+            {% for x in aut %}
+            <tr>
+                <td>{{x.name}}</td>
+                <td>{{x.title}}</td>
+                <td>{{x.description}}</td>
+                <td>
+                <a href=''>
+                <button id="up">Update</button></a>
+                <a href="{% url 'delete' x.id %}" >
+                <button id="del">Delete</button></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br><br>
+        <a href="{% url 'add' %}"><button id="new3">Create</button></a>
+    </div>
+</body>
+
+</html>
