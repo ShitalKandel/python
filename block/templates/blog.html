@@ -18,6 +18,7 @@
                 <th>Name </th>
                 <th>Title </th>
                 <th>Description</th>
+                <th>Image </th>
                 <th colspan=" " id="mid">Action</th>
             </thead>
             
@@ -27,6 +28,11 @@
                 <td>{{x.name}}</td>
                 <td>{{x.title}}</td>
                 <td>{{x.description}}</td>
+                <td>
+                    {% if x.image %}
+                    <img src= {{x.image}} width='500' height='500' >
+                    {% endif %}
+                </td>
                 <td>
                 <a href=''>
                 <button id="up">Update</button></a>

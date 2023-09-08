@@ -27,7 +27,10 @@ def addrec(request):
     x=request.POST['first']
     y=request.POST['second']
     z=request.POST['third']
-    mem=Author(name=x,title=y,description=z)
+    
+    image=request.POST['image']
+    print(image)
+    mem=Author(name=str(x),title=y,description=z, image =image)
     mem.save()
     return redirect("blog")
 
