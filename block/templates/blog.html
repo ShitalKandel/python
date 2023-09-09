@@ -34,7 +34,7 @@
                     {% endif %}
                 </td>
                 <td>
-                <a href=''>
+                <a href="{% url 'uprec' x.id%}">
                 <button id="up">Update</button></a>
                 <a href="{% url 'delete' x.id %}" >
                 <button id="del">Delete</button></a>

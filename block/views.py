@@ -24,9 +24,9 @@ def add(request):
     return render(request,'add.html')
 
 def addrec(request):
-    x=request.POST['first']
-    y=request.POST['second']
-    z=request.POST['third']
+    x=request.POST['name']
+    y=request.POST['title']
+    z=request.POST['description']
     
     image=request.POST['image']
     print(image)
@@ -38,3 +38,19 @@ def delete(request,id):
     aut=Author.objects.get(id=id)
     aut.delete()
     return redirect("blog")
+
+def update(request,id):
+    aut=Author.object.get(id=id)
+    return redirect(request,'blog',{'aut':aut})
+
+def uprec(request,id):
+    x=request.POST['name']
+    y=request.POST['title']
+    z=request.POST['description']
+    aut=Author.objects.get(id=id)
+    aut.name=x
+    aut.title=y
+    aut.description=z
+    aut.save()
+    return redirect("blog")
+    
