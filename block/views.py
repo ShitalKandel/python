@@ -40,8 +40,8 @@ def delete(request,id):
     return redirect("blog")
 
 def update(request,id):
-    aut=Author.object.get(id=id)
-    return redirect(request,'blog',{'aut':aut})
+    aut=Author.objects.get(id=id)
+    return render(request,'update.html',{'aut':aut})
 
 def uprec(request,id):
     x=request.POST['name']

@@ -18,6 +18,7 @@ urlpatterns = [
     path('contact/',contact,name="contact"),
     path('blog/', blog ,name="blog"),
     path('add/',add,name="add"),
+    #  path('update/',add,name=""),
     path('addrec/',addrec,name="addrec"),
     path('delete/<int:id>/',delete,name="delete"),
     path('update/<int:id>/',update,name="update"),
