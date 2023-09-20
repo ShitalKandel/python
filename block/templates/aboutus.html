@@ -1,4 +1,15 @@
-<body><h1 style = "color:Dodgerblue" "text-align:middle" "font-size:300%">About</h1>
-<p1 style ="color:Blue">I am currently pursuing my bachelors degree from <b>Himalayan College of Management</b> 
-    <br> situated at <b>Kamalpokhari, Kathmandu.</b></br></p1>
-</body>
+{% extends 'navbar.html' %}
+
+{% block title %}About us{% endblock %}
+
+{% block main %}
+<div>
+    <h1 style="color: Dodgerblue; text-align: center; font-size: 300%;">About</h1>
+    <p style="color: Blue;">
+        I am currently pursuing my bachelor's degree from
+        <b>Himalayan College of Management</b>
+        <br>
+        situated at <b>Kamalpokhari, Kathmandu.</b>
+    </p>
+</div>
+{% endblock %}
