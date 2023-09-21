@@ -16,11 +16,11 @@
         <form action="{% url 'addrec' %}" method="post">
         {% csrf_token %}
             <label for="">name</label><br><br>
-            <input type="text" name="first"><br><br>
+            <input type="text" name="name"><br><br>
             <label for="">title</label><br><br>
-            <input type="text" name="second"><br><br>
+            <input type="text" name="title"><br><br>
             <label for="">description</label><br><br>
-            <input type="text" name="third"><br><br>
+            <input type="text" name="description"><br><br>
             <input type='file' name='image'>
             <button type="submit" id="new">Submit</button>
         </form>

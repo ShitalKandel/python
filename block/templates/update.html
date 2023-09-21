@@ -12,7 +12,7 @@
 
 <body>
     <div class="container2">
-        <h1>Update Member</h1>
+        <h1>Update </h1>
         <form action="{% url 'uprec' aut.id %}" method="post">
             {% csrf_token %}
             <label for=""> name</label><br><br>
@@ -21,6 +21,8 @@
             <input type="text" name="title" value="{{aut.title}}"><br><br>
             <label for="">description</label><br><br>
             <input type="text" name="description" value="{{aut.description}}"><br><br>
+            <label for="">image</label><br><br>
+            <input type="file" name="image" value="{{aut.image}}"><br><br>
             <button type="submit" id="new1">Update</button>
         </form>
 

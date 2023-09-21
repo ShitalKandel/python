@@ -1,3 +1,5 @@
+from atexit import register
+from django.conf import settings
 from django.shortcuts import redirect,render
 from .models import Author
 
@@ -10,8 +12,8 @@ def home(request):
         "Location":"Putalisadak",
     })
 
-def aboutus(request):
-    return render(request,'aboutus.html')
+def navbar(request):
+    return render(request,'navbar.html')
 
 def contact(request):
     return render(request,'contact.html')
@@ -30,8 +32,8 @@ def addrec(request):
     
     image=request.POST['image']
     print(image)
-    mem=Author(name=str(x),title=y,description=z, image =image)
-    mem.save()
+    aut=Author(name=str(x),title=y,description=z, image =image)
+    aut.save()
     return redirect("blog")
 
 def delete(request,id):
@@ -40,8 +42,8 @@ def delete(request,id):
     return redirect("blog")
 
 def update(request,id):
-    aut=Author.object.get(id=id)
-    return redirect(request,'blog',{'aut':aut})
+    aut=Author.objects.get(id=id)
+    return render(request,'update.html',{'aut':aut})
 
 def uprec(request,id):
     x=request.POST['name']
@@ -53,4 +55,3 @@ def uprec(request,id):
     aut.description=z
     aut.save()
     return redirect("blog")
-    
