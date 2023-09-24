@@ -1,17 +1,20 @@
-*{
-    margin:0;
-    padding:0;
-}
-
-body{
+* {
     margin: 0;
     padding: 0;
-    text-align: center;
-    min-height: 100vh;
-    width:100%;
-    background-image: url(/background.jpg);
-    background-size: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('background.jpg');
+    background-size: cover; 
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center center;
     position: relative;
+}
+
+.h{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 50px ;
+    font-display: calc(center);
 }
