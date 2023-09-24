@@ -1,13 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700;800;900;&display=swap");
 
 * {
-    margin: 5px;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    background: url('background.jpg') no-repeat;
+   
 }
 
 body{
+    font-family: "Arial", sans-serif;
     min-height: 100vh;
     background: url('background.jpg') no-repeat;
     background-size: cover;
@@ -27,34 +28,54 @@ body{
     z-index: 100;
 }
 
-.logo{
+/* .logo{
     font-size: 32px;
     color: #343434;
     text-decoration: none;
     font-weight: 500;
-}
+} */
 
 .navbar{
-    position: relative;
-    font-size: 15px;
-    color: #fff;
-    font-weight: 500;
+   background-color: #7393B3;
+   overflow:hidden;
+}
+
+.navbar-container{
+    max-width: 1500px;
+    margin:auto;
+    padding: 0, 20px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo{
+    background-blend-mode: hard-light;
+    font-size: 50px;
+    color: #997570;
+    text-decoration:none;
+    font-weight: bold;
+}
+
+.navbar-links{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+.navbar-links li{
+    display:inline;
+    margin-right: 20px;
+}
+
+.navbar-links a{
+    color: navy;
     text-decoration: none;
-    margin-left: 30px;
-}
+    font-weight: bold;
+    transition: color 0.3 ease;
 
-.navbar::before{
-    content:'';
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: none;
-    transition: .4s;
 }
-
-.navbar a:hover::before{
-    width: 100%;
+.navbar-links a:hover{
+    color: #ff5733;
 }
 
