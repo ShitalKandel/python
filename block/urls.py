@@ -3,7 +3,7 @@ from django import views
 from django.urls import path
 from block.views import home
 from block.views import navbar
-from block.views import contact
+from block.views import login
 from block.views import blog
 from block.views import add
 from block.views import addrec
@@ -15,7 +15,7 @@ from block.views import uprec
 urlpatterns = [
     path('home/', home, name="home"),
     path('navbar/', navbar, name="navbar"),
-    path('contact/',contact,name="contact"),
+    path('login/',login,name="login"),
     path('blog/', blog ,name="blog"),
     path('add/',add,name="add"),
     path('addrec/',addrec,name="addrec"),

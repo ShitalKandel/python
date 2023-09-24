@@ -1,32 +1,28 @@
+
+<!DOCTYPE html>
 <html>
     <head>
-        <style>
-            h1 {
-                color: Red;
-                font-family: New Roman;
-                font-size : 150%;
-            }
-            p{
-                color : Blue;
-                font-family: New Roman;
-                font-size: 120%;
-            }
-            .button{
-                padding: 15px 12px;
-                background-color: lightgreen;
-                border: none;
-                color: white;
-                font-family: New Roman;
-                font-size: 100%;
-                cursor: pointer;
-            }
-        </style>
+    {% extends "navbar.html" %}
+
+    <meta class="charset">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="with=device-width" initial-size=1.0>
+    <title>Home Page</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     </head>
-    <h1>
-    Python
-</h1>
-    <p>Python is an intrepretor and high level langauge. It was first introduced in 1991</p>
-    <p>{{Name}} </p>
-    <button type="button">Contact</button>
-    <button type="button">About Us</button>
+    <body>
+        
+        <div class="Button">
+            <h>Let's Get Started</h>
+            <Button>Register</Button>
+        </div>
+        <div class="container">
+            {%block main%}{%endblock%}
+            </div>
+    </body>
     </html>
+
+    
+
+    
