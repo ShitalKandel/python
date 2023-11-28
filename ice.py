@@ -97,7 +97,18 @@ def main():
     print(total_price)
     print_bill(flavor_price, choosen_toppings, total_price)
     
-    
-
 
 main()
+
+# instance method
+# class method 
+# static method
+
+# instance variable 
+# class variable
+
+# Concept + practical - Inheritance, Polymorphism
+        # - Encapusulation,  abstraction
+
+# class and object with constructor
+# code comment
