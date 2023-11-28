@@ -15,3 +15,8 @@ if result != -1:
     print(f'Target {target_value} found at index {result}.')
 else:
     print(f'Target {target_value} not found in the list.')
+
+
+
+
+

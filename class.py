@@ -1,8 +1,6 @@
 import datetime
 
 
-
-
 #creating a class ice-cream
 class IceCream:
 
@@ -25,14 +23,7 @@ class IceCream:
 
     #This method displays the menu of ice_cream in a readable format
     def display_menu(self, menu):
-        """
-        what it does
-        :param menu: list of ice creams to be displayed
-        :return 
-        """
-        '''menu represents the flavor_price , toppings_price dictionary that contains all the
-          information about each ice cream flavors and toppings
-        '''
+       
         print(f"\nMenu for {menu}:")
 
         '''it iterates over the len of menu which contains items  and prices ,
