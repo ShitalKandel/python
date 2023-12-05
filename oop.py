@@ -15,19 +15,32 @@ class CSV_Saver:
     
     #It opens the file to read if, file doesn't exist it creates an empty file with empty rows 
     #it returns a list of rows from csv
-    def read_to_csv(self, csv_file):
+    def read_to_csv(self, csv_file, action="read"):
         rows = []
+
         # Check if the file exists, and create an empty file if it doesn't
         if not os.path.exists(csv_file):
             with open(csv_file, 'w', newline='') as file:
                 csv_writer = csv.writer(file)
                 csv_writer.writerow([])  # Write an empty row
+
         # Read data from the file
         with open(csv_file, 'r') as file:
             csvreader = csv.reader(file)
-            for row in csvreader:
-                rows.append(row)
-        return rows
+
+            # Read and display data
+            if action == "read":
+                for row in csvreader:
+                    rows.append(row)
+                if len(rows) > 1:
+                    return rows
+                    # for i, row in enumerate(rows[1:], 1):
+                    #     print(f"{i}. {row}")
+                else:
+                    print("CSV file is empty.")
+
+    
+
 
 
 
@@ -138,6 +151,13 @@ class CSV_Operation(CSV_Saver):
         else:
             print(f"CSV file {self.csv_file} is empty. Cannot update.")
 
+    
+    def display(self,rows):
+        # CSV_Operation.read_to_csv()
+        for i, row in enumerate(rows[1:], 1):
+            print(f"{i}. {row}")
+
+
 
     #deletes the specific row of the data
     def delete_csv_file(self):
@@ -158,10 +178,16 @@ header = ["Name", "Age", "City"]
 
 # Check if the file already exists
 if os.path.exists(file_name):
-    print("File exists. Do you want to fill data, update, or delete? (fill/update/delete):")
+    print("File exists. Do you want to fill data, update, or delete? (read/fill/update/delete):")
     action = input().lower()
 
-    if action == 'fill':
+    if action == 'read':
+        print("Reading data from the file:")
+        csv_obj = CSV_Operation(file_name, header)
+        rows=csv_obj.read_to_csv(file_name, action="read")
+        csv_obj.display(rows)
+
+    elif action == 'fill':
         print("Enter data for each column:")
         data = [input(f"{column}: ") for column in header]
         csv_obj = CSV_Operation(file_name, header)
