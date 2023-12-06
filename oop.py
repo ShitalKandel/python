@@ -118,7 +118,7 @@ class CSV_Operation(CSV_Saver):
     #constructor that initializes an instance with a csv_file and header.
     #It also initializes an operation_log list to keep track of CSV operations.
     def __init__(self, csv_file, header):
-        super().__init__()
+        # super().__init__()
         self.csv_file = csv_file
         self.header = header
         self.operation_log = []  # To keep a record of CSV operations
